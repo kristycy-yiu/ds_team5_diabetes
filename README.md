@@ -11,7 +11,7 @@
 * [Project Overview and Purpose](#purpose--overview)
 * [Goals & Objectives](#goals--objectives)
 * [Methodology](#methodology)
-* [Data Description & Cleaning](#data-description--cleaning)
+* [Data Preparation](#data-preparation)
 * [Exploratory Data Analysis](#exploratory-data-analysis)
 * [Risks, Limitations, and Unknowns](#risks-limitations-and-unknowns)
 * [Regression Analysis](#regression-analysis)
@@ -40,7 +40,7 @@
 
 ---
 
-## Data Description & Cleaning
+## Data Preparation
 
 
 ---
