@@ -66,7 +66,7 @@ Before any analysis, the dataset will be assessed for completeness, consistency,
 Exploratory data analysis will be conducted to understand the demographic and clinical characteristics of the population.
 - Descriptive statistics: Summarize key variables (e.g., mean age, gender distribution, and prevalence of each symptom).
 - Cross-tabulations: Compare symptom frequencies between diabetic and non-diabetic individuals, as well as across genders.
-- Visualization: Use bar plots, histograms, and heatmaps to identify potential patterns or correlations between features and diabetes status.
+- Visualization: Use bar plots, scatterplots, and heatmaps to identify potential patterns or correlations between features and diabetes status.
 - Preliminary insights: Identify which symptoms appear most common or distinctive between males and females diagnosed with diabetes.
 
 ### Regression Analysis and Validation
@@ -114,6 +114,30 @@ Libraries and their Purpose:
 ---
 
 ## Exploratory Data Analysis
+- Objective: To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
+
+- Method: The data was assessed to identify and summarize key differences in demographic (i.e. age and gender) and grouped by gender and age using visualizations to highlight key relationships and find differences in each group.  
+
+
+
+![Overall Symptom Prevalence](images/overall_symptom_prevalence.png)
+Figure 3: Overall Symptom Prevalence Among All Participants 
+This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
+
+
+![Symptom Prevalence between Diabetic and Non-Diabetic Participants](images/symptom_prevalence_among_diabetic_by_gender.png)
+Figure 4: Symptom Prevalence between Diabetic and Non-Diabetic Participants
+This heatmap shows the prevalence of common diabetes-related symptoms among diabetic and non-diabetic participants. The most distinct differences are observed for polyuria and polydipsia, with diabetics exhibiting these symptoms over ten times more frequently than non-diabetics. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. These results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening.
+
+
+![Symptom Prevalence among Diabetic Participants by Gender](images/symptom_prevalence_diabetic_non_diabetic_participants.png)
+Figure 5: Symptom Prevalence among Diabetic Participants by Gender
+This heatmap compares symptom frequencies between male and female participants with diabetes. While both genders show high rates of polyuria, polydipsia, and weakness, females report higher frequencies of sudden weight loss and partial paresis, whereas males more often report genital thrush, alopecia, and irritability. These differences suggest gender-specific patterns in the presentation of early-stage diabetes symptoms.
+
+
+![Symptom Prevalence among Diabetic Participants by Gender](images/top_gender_differences_among_diabetic.png)
+Figure 6: Top Gender-Based Differences among Diabetic Participants
+The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
 
 
 ---
