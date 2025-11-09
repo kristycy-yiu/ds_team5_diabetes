@@ -62,6 +62,49 @@ Before any analysis, the dataset will be assessed for completeness, consistency,
 - Normalization and consistency checks: Confirm uniform variable naming, ensure correct value ranges (e.g., realistic age values), and identify potential outliers.
 - Reproducibility: All cleaning steps will be implemented programmatically in Python to allow transparent and repeatable preprocessing.
 
+### Literature Search
+A literature search will be conducted to provide theoretical grounding for the variables, identify any known confounders, and support interpretation for statistical results. The information on confounders will be used to inform adjustment variables in our regression model.
+
+Search #1
+Database: PubMed
+Search terms: 
+("type 2 diabetes mellitus"[MeSH Terms] OR "type 2 diabetes" OR "diabetes mellitus, type 2")
+AND ("sex differences" OR "gender differences" OR "male female comparison")
+AND ("risk factors" OR predictors OR "clinical features" OR symptoms OR determinants)
+AND (humans[MeSH Terms])
+AND (English[lang])
+Publication date: within last 5 years 
+Language: English
+Number of search results: 283
+
+Search #2
+Database: Google Scholar
+Search terms: 
+("type 2 diabetes mellitus"[MeSH Terms] OR "type 2 diabetes" OR "diabetes mellitus, type 2")
+AND ("sex differences" OR "gender differences" OR "male female comparison")
+AND ("risk factors" OR predictors OR "clinical features" OR symptoms OR determinants)
+AND (humans[MeSH Terms])
+AND (English[lang])
+Publication date: since 2021
+Language: English
+Number of search results: 15 
+
+Searches #1 and 2 did not yield sufficient relevant results so the search strategy (search terms) was revised for Search #3.
+
+Search #3
+Database: PubMed
+Search terms: 
+("Diabetes Mellitus, Type 2"[Mesh]) 
+AND ("early-onset"[Title/Abstract] OR "premature"[Title/Abstract] OR "middle-aged"[Mesh] OR "adult"[Mesh]) 
+AND ("Risk Factors"[Mesh] OR predictor*[Title/Abstract] OR "clinical features"[Title/Abstract] OR determinants[Title/Abstract] OR "associated factors"[Title/Abstract]) 
+AND (Age[Mesh] OR "Sex Characteristics"[Mesh] OR "Obesity"[Mesh] OR "Body Mass Index"[Mesh] OR polyuria[Title/Abstract] OR polydipsia[Title/Abstract] OR "sudden weight loss"[Title/Abstract] OR weakness[Title/Abstract] OR polyphagia[Title/Abstract])
+AND ("cohort study"[Publication Type] OR "case-control study"[Publication Type] OR "observational study"[Publication Type])
+Publication date: within last 5 years
+Language: English
+Number of search results: 65
+
+Search #3 also did not yield sufficient relevant results so Search #4 will be developed and presented in the final submission. 
+
 ### Descriptive and Exploratory Data Analysis
 Exploratory data analysis will be conducted to understand the demographic and clinical characteristics of the population.
 - Descriptive statistics: Summarize key variables (e.g., mean age, gender distribution, and prevalence of each symptom).
@@ -125,11 +168,17 @@ All symptom-related variables and the outcome variable are recorded as binary ca
 ## Risks, Limitations, & Unknowns
 
 ### Risks
+Gender imbalance: With a higher number of male cases, the gender imbalance may lead to biased model predictions, risking reduced accuracy for female patients and difficulty in detecting subtle differences between genders. We will mitigate this risk using bootstrapping to oversample the underrepresented female cases to create a more balanced training set.
+
+Confounders: If confounders (e.g., BMI) are not accounted for, the model could be biased and lead to incorrect conclusions about gender differences. To mitigate this risk, we will analyze the subgroups of confounders separately.
 
 ### Limitations
+Data generalizability: The data may not be generalizable to the Canadian population as it is based on data collected in Sylhet, Bangladesh.
+
+Unclear definitions of clinical features: Clinical features including “sudden weight loss”, “weakness”, “partial paresis”, “irritability”, “delayed hearing”, “visual blurring”, and “itching” are not clearly defined in the dataset. Thresholds for these variables or standardized measurement scales are not provided, which limits our ability to determine their severity or to ensure consistent assessment across patients. This may limit our ability to provide appropriate recommendations regarding these factors. 
 
 ### Unknowns
-
+Other possible predictors of diabetes: Literature has shown that race/ethnicity, acculturation, tobacco smoking, education level, and marital status are also predictive of early onset diabetes. Without information on these variables in our dataset, it is unknown whether the clinical features that we’ve identified are the most significant predictors or if there are more prominent predictors that we have not yet explored.
 
 ---
 
