@@ -161,31 +161,37 @@ All symptom-related variables and the outcome variable are recorded as binary ca
 ---
 
 ## Exploratory Data Analysis
-- Objective: To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
+**Objective:** To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
 
-- Method: The data was assessed to identify and summarize key differences in demographic (i.e. age and gender) and grouped by gender and age using visualizations to highlight key relationships and find differences in each group.  
+**Method:** The data was assessed to identify and summarize key differences in demographic (i.e. age and gender) and grouped by gender and age using visualizations to highlight key relationships and find differences in each group.  
+
+**Findings:**
 
 
 
 ![Overall Symptom Prevalence](images/overall_symptom_prevelance.png)
-**Figure 3: Overall Symptom Prevalence Among All Participants**
-This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
+**Figure 6: Overall Symptom Prevalence Among All Participants**
+  This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
 
 
 ![Symptom Prevalence between Diabetic and Non-Diabetic Participants](images/symptom_prevalence_among_diabetic_by_gender.png)
-**Figure 4: Symptom Prevalence between Diabetic and Non-Diabetic Participants**
-This heatmap shows the prevalence of common diabetes-related symptoms among diabetic and non-diabetic participants. The most distinct differences are observed for polyuria and polydipsia, with diabetics exhibiting these symptoms over ten times more frequently than non-diabetics. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. These results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening.
+**Figure 7: Symptom Prevalence between Diabetic and Non-Diabetic Participants**
+  This heatmap shows the prevalence of common diabetes-related symptoms among diabetic and non-diabetic participants. The most distinct differences are observed for polyuria and polydipsia, with diabetics exhibiting these symptoms over ten times more frequently than non-diabetics, suggesting potential predictive strength. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. The remaining variables show more even distributions or low variance, which may limit their predictive relevance. These initial observations provide an early indication of which symptoms may emerge as statistically significant predictors during modeling. From the perspective of the business case, these results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening.
 
 
 ![Symptom Prevalence among Diabetic Participants by Gender](images/symptom_prevalence_diabetic_non_diabetic_participants.png)
-**Figure 5: Symptom Prevalence among Diabetic Participants by Gender**
-This heatmap compares symptom frequencies between male and female participants with diabetes. While both genders show high rates of polyuria, polydipsia, and weakness, females report higher frequencies of sudden weight loss and partial paresis, whereas males more often report genital thrush, alopecia, and irritability. These differences suggest gender-specific patterns in the presentation of early-stage diabetes symptoms.
+**Figure 8: Symptom Prevalence among Diabetic Participants by Gender**
+  This heatmap compares symptom frequencies between male and female participants with diabetes. While both genders show high rates of polyuria, polydipsia, and weakness, females report higher frequencies of sudden weight loss and partial paresis, whereas males more often report genital thrush, alopecia, and irritability. These differences suggest gender-specific patterns in the presentation of early-stage diabetes symptoms.
 
 
 ![Symptom Prevalence among Diabetic Participants by Gender](images/top_gender_differences_among_diabetic.png)
-**Figure 6: Top Gender-Based Differences among Diabetic Participants**
-The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
+**Figure 9: Top Gender-Based Differences among Diabetic Participants**
+  The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
 
+
+![Symptom Prevalence by Diabetes Status](images/sym_prev_status.png)
+**Figure 10: Symptom Prevalence by Diabetes Status**
+  The bar chart displays the proportion of patients reporting each symptom, grouped by diabetes classification. Polyuria, Polydipsia, and Sudden Weight Loss show the strongest associations with diabetes-positive cases, with over 60% of diabetic patients experiencing these symptoms. In contrast, symptoms like Alopecia and Obesity are more evenly distributed or more prevalent among non-diabetic individuals. These findings suggest that a subset of symptoms may have higher predictive power for diabetes diagnosis. 
 
 ---
 
