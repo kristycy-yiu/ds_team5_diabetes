@@ -284,7 +284,7 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 | **Lamoya Waldman**       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
 | **Samantha Sathaseevan** | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
 
---
+---
 ## Installation & Environment Setup
 
 1. Clone the repository:
