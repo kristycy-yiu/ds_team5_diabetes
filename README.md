@@ -164,13 +164,13 @@ All symptom-related variables and the outcome variable are recorded as binary ca
 ---
 
 ## Exploratory Data Analysis
-#### Objective 
+### Objective 
 To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
 
-#### Method 
+### Method 
 The data was assessed to identify and summarize key differences in demographic variables (i.e. age and gender) and grouped by age and/or gender and diabetes classification using visualizations to highlight key relationships and find differences between men and women with diabetes.  
 
-#### Findings
+### Findings
 
 <p align="center">
 <img src="images/diabetes_diagnoses.png" style="width:50%;">
