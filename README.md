@@ -6,16 +6,19 @@
 * Lamoya Waldman
 * Samantha Sathaseevan
 
-## Contents
+## Table of Contents
 
 * [Project Overview & Purpose](#project-overview--purpose)
 * [Goals & Objectives](#goals--objectives)
 * [Methodology](#methodology)
-* [Data Preparation](#data-preparation)
+* [Data Preparation/Cleaning](#data-preparationcleaning)
 * [Exploratory Data Analysis](#exploratory-data-analysis)
 * [Risks, Limitations, & Unknowns](#risks-limitations--unknowns)
-* [Regression Analysis](#regression-analysis)
+* [Regression Analysis & Validation](#regression-analysis--validation)
 * [Conclusions & Discussion](#conclusions--discussion)
+* [References & Acknowledgements](#references--acknowledgements)
+* [Team Credits & Reflections](#team-credits--reflections)
+* [Installation & Environment Setup](#installation--environment-setup)
 
 ---
 
@@ -151,7 +154,7 @@ Libraries and their Purpose:
 
 ---
 
-## Data Preparation
+## Data Preparation/Cleaning
 A preliminary analysis of the dataset was conducted to evaluate its structure, suitability for analysis, and potential considerations relevant to our overarching goal: to explore and identify significant demographic variables and clinical predictors of early-onset diabetes by gender to support targeted prevention and early intervention strategies.
 
 The dataset consists of 520 observations and 17 variables, including one outcome variable and a combination of demographic and symptom-based predictors. The response variable: class, indicates the presence or absence of early-stage diabetes classified as Positive or Negative. Predictor variables include demographic factors (Age and Gender) and 14 binary symptom indicators (e.g. Polyuria, Polydipsia, sudden weight loss, visual blurring, etc.).
@@ -161,11 +164,13 @@ All symptom-related variables and the outcome variable are recorded as binary ca
 ---
 
 ## Exploratory Data Analysis
-**Objective:** To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
+### Objective 
+To examine the Early Stage Diabetes Risk Prediction dataset to understand the data and uncover gender related patterns between symptoms and early-stage diabetes.
 
-**Method:** The data was assessed to identify and summarize key differences in demographic variables (i.e. age and gender) and grouped by age and/or gender and diabetes classification using visualizations to highlight key relationships and find differences between men and women with diabetes.  
+### Method 
+The data was assessed to identify and summarize key differences in demographic variables (i.e. age and gender) and grouped by age and/or gender and diabetes classification using visualizations to highlight key relationships and find differences between men and women with diabetes.  
 
-#### Findings:
+### Findings
 
 <p align="center">
 <img src="images/diabetes_diagnoses.png" style="width:50%;">
@@ -230,7 +235,7 @@ This heatmap compares symptom frequencies between male and female participants w
 The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
 
 
-### Summary: 
+### Summary 
 Overall, the exploratory analysis revealed meaningful demographic and clinical patterns in the Early Stage Diabetes Risk Prediction dataset. The population was moderately imbalanced by both diabetes status and gender, with a higher proportion of males and diabetes-positive participants. Middle-aged adults (ages 40–55) accounted for most diabetes cases, aligning with known epidemiological trends. Symptom analysis showed that polyuria, polydipsia, and weakness were the most prevalent indicators among individuals with diabetes, whereas irritability, alopecia, and obesity appeared least common. Gender-specific analyses further highlighted that females tended to report higher rates of sudden weight loss and partial paresis, while males more frequently reported genital thrush and alopecia. Collectively, these findings provide an initial understanding of how demographic and clinical features interact and suggest that gender may influence symptom presentation in early-stage diabetes, an insight that warrants deeper investigation through regression modeling.
 
 ---
@@ -252,7 +257,10 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 
 ---
 
-## Regression Analysis
+## Regression Analysis & Validation
+
+
+### Visualizations
 
 
 ---
@@ -262,11 +270,30 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 
 ---
 
-## Team Member Video Links
+## References & Acknowledgements
 
-| Name                 | Links |
-|----------------------|-------|
-| Kristy Yiu           |       |
-| Rebecca Laundos      |       |
-| Lamoya Waldman       |       |
-| Samantha Sathaseevan |       |
+
+---
+
+## Team Credits & Reflections
+
+| Name                     | GitHub Accounts                                  | Reflection Videos |
+|--------------------------|--------------------------------------------------|-------------------|
+| **Kristy Yiu**           | [@kristycy-yiu](https://github.com/kristycy-yiu) |                   |
+| **Rebecca Laundos**      | [@relaundos7](https://github.com/relaundos7)     |                   |
+| **Lamoya Waldman**       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
+| **Samantha Sathaseevan** | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
+
+---
+## Installation & Environment Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/kristycy-yiu/ds_team5_diabetes.git
+cd ds_team5_diabetes
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
