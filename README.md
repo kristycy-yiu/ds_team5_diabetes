@@ -277,23 +277,23 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 
 ## Team Credits & Reflections
 
-| Name                     | GitHub Accounts                                  | Reflection Videos |
-|--------------------------|--------------------------------------------------|-------------------|
-| **Kristy Yiu**           | [@kristycy-yiu](https://github.com/kristycy-yiu) |                   |
-| **Rebecca Laundos**      | [@relaundos7](https://github.com/relaundos7)     |                   |
-| **Lamoya Waldman**       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
-| **Samantha Sathaseevan** | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
+| Name                 | GitHub Accounts                                  | Reflection Videos |
+|----------------------|--------------------------------------------------|-------------------|
+| Kristy Yiu           | [@kristycy-yiu](https://github.com/kristycy-yiu) |                   |
+| Rebecca Laundos      | [@relaundos7](https://github.com/relaundos7)     |                   |
+| Lamoya Waldman       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
+| Samantha Sathaseevan | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
 
 ---
 ## Installation & Environment Setup
 
-1. Clone the repository:
+**1. Clone the repository:**
 ```bash
 git clone https://github.com/kristycy-yiu/ds_team5_diabetes.git
 cd ds_team5_diabetes
 ```
 
-2. Install dependencies:
+**2. Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
