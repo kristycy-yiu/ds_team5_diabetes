@@ -6,16 +6,19 @@
 * Lamoya Waldman
 * Samantha Sathaseevan
 
-## Contents
+## Table of Contents
 
 * [Project Overview & Purpose](#project-overview--purpose)
 * [Goals & Objectives](#goals--objectives)
 * [Methodology](#methodology)
-* [Data Preparation](#data-preparation)
+* [Data Preparation/Cleaning](#data-preparationcleaning)
 * [Exploratory Data Analysis](#exploratory-data-analysis)
 * [Risks, Limitations, & Unknowns](#risks-limitations--unknowns)
-* [Regression Analysis](#regression-analysis)
+* [Regression Analysis & Validation](#regression-analysis--validation)
 * [Conclusions & Discussion](#conclusions--discussion)
+* [References & Acknowledgements](#references--acknowledgements)
+* [Team Credits & Reflections](#team-credits--reflections)
+* [Installation & Environment Setup](#installation--environment-setup)
 
 ---
 
@@ -62,11 +65,54 @@ Before any analysis, the dataset will be assessed for completeness, consistency,
 - Normalization and consistency checks: Confirm uniform variable naming, ensure correct value ranges (e.g., realistic age values), and identify potential outliers.
 - Reproducibility: All cleaning steps will be implemented programmatically in Python to allow transparent and repeatable preprocessing.
 
+### Literature Search
+A literature search will be conducted to provide theoretical grounding for the variables, identify any known confounders, and support interpretation for statistical results. The information on confounders will be used to inform adjustment variables in our regression model.
+
+Search #1
+Database: PubMed
+Search terms: 
+("type 2 diabetes mellitus"[MeSH Terms] OR "type 2 diabetes" OR "diabetes mellitus, type 2")
+AND ("sex differences" OR "gender differences" OR "male female comparison")
+AND ("risk factors" OR predictors OR "clinical features" OR symptoms OR determinants)
+AND (humans[MeSH Terms])
+AND (English[lang])
+Publication date: within last 5 years 
+Language: English
+Number of search results: 283
+
+Search #2
+Database: Google Scholar
+Search terms: 
+("type 2 diabetes mellitus"[MeSH Terms] OR "type 2 diabetes" OR "diabetes mellitus, type 2")
+AND ("sex differences" OR "gender differences" OR "male female comparison")
+AND ("risk factors" OR predictors OR "clinical features" OR symptoms OR determinants)
+AND (humans[MeSH Terms])
+AND (English[lang])
+Publication date: since 2021
+Language: English
+Number of search results: 15 
+
+Searches #1 and 2 did not yield sufficient relevant results so the search strategy (search terms) was revised for Search #3.
+
+Search #3
+Database: PubMed
+Search terms: 
+("Diabetes Mellitus, Type 2"[Mesh]) 
+AND ("early-onset"[Title/Abstract] OR "premature"[Title/Abstract] OR "middle-aged"[Mesh] OR "adult"[Mesh]) 
+AND ("Risk Factors"[Mesh] OR predictor*[Title/Abstract] OR "clinical features"[Title/Abstract] OR determinants[Title/Abstract] OR "associated factors"[Title/Abstract]) 
+AND (Age[Mesh] OR "Sex Characteristics"[Mesh] OR "Obesity"[Mesh] OR "Body Mass Index"[Mesh] OR polyuria[Title/Abstract] OR polydipsia[Title/Abstract] OR "sudden weight loss"[Title/Abstract] OR weakness[Title/Abstract] OR polyphagia[Title/Abstract])
+AND ("cohort study"[Publication Type] OR "case-control study"[Publication Type] OR "observational study"[Publication Type])
+Publication date: within last 5 years
+Language: English
+Number of search results: 65
+
+Search #3 also did not yield sufficient relevant results so Search #4 will be developed and presented in the final submission. 
+
 ### Descriptive and Exploratory Data Analysis
 Exploratory data analysis will be conducted to understand the demographic and clinical characteristics of the population.
 - Descriptive statistics: Summarize key variables (e.g., mean age, gender distribution, and prevalence of each symptom).
 - Cross-tabulations: Compare symptom frequencies between diabetic and non-diabetic individuals, as well as across genders.
-- Visualization: Use bar plots, histograms, and heatmaps to identify potential patterns or correlations between features and diabetes status.
+- Visualization: Use pie charts, correlation matrix, bar plots, scatterplots, and heatmaps to identify potential patterns or correlations between symptoms and diabetes status.
 - Preliminary insights: Identify which symptoms appear most common or distinctive between males and females diagnosed with diabetes.
 
 ### Regression Analysis and Validation
@@ -108,8 +154,12 @@ Libraries and their Purpose:
 
 ---
 
-## Data Preparation
+## Data Preparation/Cleaning
+A preliminary analysis of the dataset was conducted to evaluate its structure, suitability for analysis, and potential considerations relevant to our overarching goal: to explore and identify significant demographic variables and clinical predictors of early-onset diabetes by gender to support targeted prevention and early intervention strategies.
 
+The dataset consists of 520 observations and 17 variables, including one outcome variable and a combination of demographic and symptom-based predictors. The response variable: class, indicates the presence or absence of early-stage diabetes classified as Positive or Negative. Predictor variables include demographic factors (Age and Gender) and 14 binary symptom indicators (e.g. Polyuria, Polydipsia, sudden weight loss, visual blurring, etc.).
+
+All symptom-related variables and the outcome variable are recorded as binary categorical values (Yes/No), while Age is a numeric variable. A thorough review of the dataset using standard data integrity practices indicated that there were no missing values. All variables contained complete data for all 520 observations. The dataset is clean and does not require imputation or substantial preprocessing aside from applying standard data encoding methods to categorical variables within the dataset (e.g. transforming Yes/No to 1 and 0).
 
 ---
 
@@ -126,7 +176,18 @@ The binary variables were numerically encoded to examine their interrelationship
 
 ![Age Distribution](images/fig1_age_distribution.PNG)
 
-Figure 1: Age Distribution
+
+<p align="center">
+<img src="images/correlation_matrix.png" style="width:60%;">
+
+#### Figure 3: Correlation Matrix of Predictor Variables
+The binary variables were numerically encoded to examine their interrelationships through a correlation matrix. The analysis suggested notable positive associations (e.g. Polyuria, Polydipsia, and sudden weight loss) between several symptoms and the diabetes outcome variable. While correlation does not imply causation, these relationships support the hypothesis that symptom presentation is a meaningful basis for prediction.
+
+
+<p align="center">
+<img src="images/age_distribution.png" style="width:50%;">
+
+#### Figure 4: Age Distribution
 The age distribution in the dataset spans from 16 to 90 years. However, most participants fall between 35 and 60 years old, with fewer cases below 30 and above 70. The mean age is approximately 48 years with a median of 47.5 suggesting a fairly symmetric distribution centered around middle adulthood. The standard deviation of 12.15 years suggests moderate variability in age, with no indication of extreme outliers. This broad and balanced age spread is advantageous for our analysis as diabetes risk is known to increase with age and the inclusion of a wide age range improves the generalizability of our findings. In addition, this distribution aligns with the clinical understanding that early-stage diabetes is more prevalent among middle-aged adults, reinforcing the suitability of this dataset for studying early detection risk factors.
 
 ![Age and Diabetes Classification by Gender](images/fig2_age_diabetes_scatter.PNG)
@@ -139,42 +200,55 @@ The scatterplot of Age and Diabetes Classification by Gender illustrates how bot
 Figure 3: Overall Symptom Prevalence Among All Participants 
 This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
 
+<p align="center">
+<img src="images/overall_symptom_prevelance.png" style="width:70%;">
+
+#### Figure 6: Overall Symptom Prevalence Among All Participants
+This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
 
 ![Symptom Prevalence between Diabetic and Non-Diabetic Participants](images/fig4_symptom_prevelance_heatmap.PNG)
 
-Figure 4: Symptom Prevalence between Diabetic and Non-Diabetic Participants
-This heatmap shows the prevalence of common diabetes-related symptoms among diabetic and non-diabetic participants. The most distinct differences are observed for polyuria and polydipsia, with diabetics exhibiting these symptoms over ten times more frequently than non-diabetics, suggesting potential predictive strength. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. The remaining variables show more even distributions or low variance, which may limit their predictive relevance. These initial observations provide an early indication of which symptoms may emerge as statistically significant predictors during modeling. From the perspective of the business case, these results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening.
+#### Figure 7: Symptom Prevalence by Diabetes Status
+The bar chart displays the proportion of patients reporting each symptom, grouped by diabetes classification. Polyuria, Polydipsia, and Sudden Weight Loss are most frequently observed amongst the diabetes-positive cases, with over 60% of diabetic patients experiencing these symptoms. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. The remaining variables show more even distributions or low variance, which may limit their predictive relevance. These findings suggest that a subset of symptoms may have higher predictive power for diabetes diagnosis.From the perspective of the business case, these results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening. 
 
 ![Symptom Prevalence among Diabetic Participants by Gender](images/fig5_symptom_prevalance.PNG)
 
-Figure 5: Symptom Prevalence among Diabetic Participants by Gender
+#### Figure 8: Symptom Prevalence among Diabetic Participants by Gender
 This heatmap compares symptom frequencies between male and female participants with diabetes. While both genders show high rates of polyuria, polydipsia, and weakness, females report higher frequencies of sudden weight loss and partial paresis, whereas males more often report genital thrush, alopecia, and irritability. These differences suggest gender-specific patterns in the presentation of early-stage diabetes symptoms.
 
 ![Top Gender-Based Differences among Diabetic Participants](images/fig6_gender_based_barchart.PNG)
 
-Figure 6: Top Gender-Based Differences among Diabetic Participants
+#### Figure 9: Top Gender-Based Differences among Diabetic Participants
 The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
 
 ![Symptom Prevalence by Diabetes Status](images/fig7_symptom_prevalance_barchart.PNG)
 
-Figure 7: Symptom Prevalence by Diabetes Status
-The bar chart displays the proportion of patients reporting each symptom, grouped by diabetes classification. Polyuria, Polydipsia, and Sudden Weight Loss show the strongest associations with diabetes-positive cases, with over 60% of diabetic patients experiencing these symptoms. In contrast, symptoms like Alopecia and Obesity are more evenly distributed or more prevalent among non-diabetic individuals. These findings suggest that a subset of symptoms may have higher predictive power for diabetes diagnosis. 
-
+### Summary 
+Overall, the exploratory analysis revealed meaningful demographic and clinical patterns in the Early Stage Diabetes Risk Prediction dataset. The population was moderately imbalanced by both diabetes status and gender, with a higher proportion of males and diabetes-positive participants. Middle-aged adults (ages 40–55) accounted for most diabetes cases, aligning with known epidemiological trends. Symptom analysis showed that polyuria, polydipsia, and weakness were the most prevalent indicators among individuals with diabetes, whereas irritability, alopecia, and obesity appeared least common. Gender-specific analyses further highlighted that females tended to report higher rates of sudden weight loss and partial paresis, while males more frequently reported genital thrush and alopecia. Collectively, these findings provide an initial understanding of how demographic and clinical features interact and suggest that gender may influence symptom presentation in early-stage diabetes, an insight that warrants deeper investigation through regression modeling.
 
 ---
 
 ## Risks, Limitations, & Unknowns
 
 ### Risks
+Gender imbalance: With a higher number of male cases, the gender imbalance may lead to biased model predictions, risking reduced accuracy for female patients and difficulty in detecting subtle differences between genders. We will mitigate this risk using bootstrapping to oversample the underrepresented female cases to create a more balanced training set.
+
+Confounders: If confounders (e.g., BMI) are not accounted for, the model could be biased and lead to incorrect conclusions about gender differences. To mitigate this risk, we will analyze the subgroups of confounders separately.
 
 ### Limitations
+Data generalizability: The data may not be generalizable to the Canadian population as it is based on data collected in Sylhet, Bangladesh.
+
+Unclear definitions of clinical features: Clinical features including “sudden weight loss”, “weakness”, “partial paresis”, “irritability”, “delayed hearing”, “visual blurring”, and “itching” are not clearly defined in the dataset. Thresholds for these variables or standardized measurement scales are not provided, which limits our ability to determine their severity or to ensure consistent assessment across patients. This may limit our ability to provide appropriate recommendations regarding these factors. 
 
 ### Unknowns
-
+Other possible predictors of diabetes: Literature has shown that race/ethnicity, acculturation, tobacco smoking, education level, and marital status are also predictive of early onset diabetes. Without information on these variables in our dataset, it is unknown whether the clinical features that we’ve identified are the most significant predictors or if there are more prominent predictors that we have not yet explored.
 
 ---
 
-## Regression Analysis
+## Regression Analysis & Validation
+
+
+### Visualizations
 
 
 ---
@@ -184,11 +258,30 @@ The bar chart displays the proportion of patients reporting each symptom, groupe
 
 ---
 
-## Team Member Video Links
+## References & Acknowledgements
 
-| Name                 | Links |
-|----------------------|-------|
-| Kristy Yiu           |       |
-| Rebecca Laundos      |       |
-| Lamoya Waldman       |       |
-| Samantha Sathaseevan |       |
+
+---
+
+## Team Credits & Reflections
+
+| Name                     | GitHub Accounts                                  | Reflection Videos |
+|--------------------------|--------------------------------------------------|-------------------|
+| **Kristy Yiu**           | [@kristycy-yiu](https://github.com/kristycy-yiu) |                   |
+| **Rebecca Laundos**      | [@relaundos7](https://github.com/relaundos7)     |                   |
+| **Lamoya Waldman**       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
+| **Samantha Sathaseevan** | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
+
+---
+## Installation & Environment Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/kristycy-yiu/ds_team5_diabetes.git
+cd ds_team5_diabetes
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
