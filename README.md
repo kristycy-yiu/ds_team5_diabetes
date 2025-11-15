@@ -190,38 +190,38 @@ The dataset consists of 192 (~37%) Female and 328 (~63%) Male participants, reve
 
 
 <p align="center">
-<img src="images/correlation_matrix.png" style="width:60%;">
+<img src="images/age_distribution.png" style="width:70%;">
 
-#### Figure 3: Correlation Matrix of Predictor Variables
-The binary variables were numerically encoded to examine their interrelationships through a correlation matrix. The analysis suggested notable positive associations (e.g. Polyuria, Polydipsia, and sudden weight loss) between several symptoms and the diabetes outcome variable. While correlation does not imply causation, these relationships support the hypothesis that symptom presentation is a meaningful basis for prediction.
-
-
-<p align="center">
-<img src="images/age_distribution.png" style="width:50%;">
-
-#### Figure 4: Age Distribution
+#### Figure 3: Age Distribution
 The age distribution in the dataset spans from 16 to 90 years. However, most participants fall between 35 and 60 years old, with fewer cases below 30 and above 70. The mean age is approximately 48 years with a median of 47.5 suggesting a fairly symmetric distribution centered around middle adulthood. The standard deviation of 12.15 years suggests moderate variability in age, with no indication of extreme outliers. This broad and balanced age spread is advantageous for our analysis as diabetes risk is known to increase with age and the inclusion of a wide age range improves the generalizability of our findings. In addition, this distribution aligns with the clinical understanding that early-stage diabetes is more prevalent among middle-aged adults, reinforcing the suitability of this dataset for studying early detection risk factors.
 
 
 <p align="center">
-<img src="images/age_gender_class.png" style="width:50%;">
+<img src="images/age_gender_class.png" style="width:70%;">
 
-#### Figure 5: Age and Diabetes Classification by Gender
+#### Figure 4: Age and Diabetes Classification by Gender
 The scatterplot of Age and Diabetes Classification by Gender illustrates how both males and females are affected across similar age ranges, although there are more male participants overall. Preliminary patterns suggest that age may interact differently with gender in predicting diabetes onset. For instance, females show a slightly higher concentration of positive diagnoses at younger ages compared to males, which could warrant further investigation into gender-specific risk factors and symptom presentation. Moreover, positive diagnoses appear more concentrated in individuals between 40 and 55 years old, which may point to midlife as a key period for the onset of diabetes symptoms in both genders.
 
 
 <p align="center">
 <img src="images/overall_symptom_prevelance.png" style="width:70%;">
 
-#### Figure 6: Overall Symptom Prevalence Among All Participants
+#### Figure 5: Overall Symptom Prevalence Among All Participants
 This bar chart shows the percentage of individuals reporting each symptom across the full dataset. Weakness, polyuria, and itching were the most commonly reported symptoms, whereas irritability, genital thrush, and obesity were least prevalent. These findings suggest that general fatigue and urinary changes are widespread in the population and may warrant closer investigation in diabetes risk screening.
 
 
 <p align="center">
 <img src="images/sym_prev_status.png" style="width:70%;">
 
-#### Figure 7: Symptom Prevalence by Diabetes Status
+#### Figure 6: Symptom Prevalence by Diabetes Status
 The bar chart displays the proportion of patients reporting each symptom, grouped by diabetes classification. Polyuria, Polydipsia, and Sudden Weight Loss are most frequently observed amongst the diabetes-positive cases, with over 60% of diabetic patients experiencing these symptoms. Other symptoms such as sudden weight loss, weakness, and partial paresis are also notably elevated in diabetic individuals. The remaining variables show more even distributions or low variance, which may limit their predictive relevance. These findings suggest that a subset of symptoms may have higher predictive power for diabetes diagnosis.From the perspective of the business case, these results reinforce the importance of early recognition of metabolic and neurological symptoms in diabetes screening. 
+
+
+<p align="center">
+<img src="images/top_gender_differences_among_diabetic.png" style="width:70%;">
+
+#### Figure 7: Top Gender-Based Differences among Diabetic Participants
+The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
 
 
 <p align="center">
@@ -232,10 +232,10 @@ This heatmap compares symptom frequencies between male and female participants w
 
 
 <p align="center">
-<img src="images/top_gender_differences_among_diabetic.png" style="width:70%;">
+<img src="images/correlation_matrix.png" style="width:60%;">
 
-#### Figure 9: Top Gender-Based Differences among Diabetic Participants
-The chart displays the absolute percentage difference in symptom prevalence between male and female individuals with diabetes. The largest disparities occur in alopecia, genital thrush, and partial paresis, indicating that dermatological and neuromuscular symptoms exhibit notable gender-specific patterns. Core metabolic symptoms such as polyuria, polydipsia, and weakness show minimal gender variation.
+#### Figure 9: Correlation Matrix of Predictor Variables
+The binary variables were numerically encoded to examine their interrelationships through a correlation matrix. The analysis suggested notable positive associations (e.g. Polyuria, Polydipsia, and sudden weight loss) between several symptoms and the diabetes outcome variable. While correlation does not imply causation, these relationships support the hypothesis that symptom presentation is a meaningful basis for prediction.
 
 
 ### Summary 
