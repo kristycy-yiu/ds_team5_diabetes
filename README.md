@@ -262,6 +262,96 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 
 ## Regression Analysis & Validation
 
+The logistic regression model achieved strong predictive performance:
+Accuracy: 94% 
+AUC (Area Under Curve): 0.99 
+Sensitivity (Recall for diabetic class): 92% 
+Specificity (Recall for non-diabetic class): 97% 
+<p align="center">
+<img src="images/ROC_curve.png" style="width:70%;">
+
+
+The model demonstrates exceptional discriminative ability, with an Area Under the Curve (AUC) of 0.99. This indicates near-perfect classification performance, meaning the model can accurately distinguish between the positive and negative classes with minimal error
+
+Feature importance analysis revealed that: polydipsia, polyuria, and irritability were the most influential predictors. The model demonstrated high interpretability, with clear directional effects for each feature. 
+
+## Regression Analysis & Validation
+### Chi-Square Test
+| Variable           | Chi²       | p-value   |
+|--------------------|------------|-----------|
+| polyuria           | 227.865839 | 1.74E-51  |
+| polydipsia         | 216.171633 | 6.19E-49  |
+| sudden_weight_loss | 97.296303  | 5.97E-23  |
+| partial_paresis    | 95.387627  | 1.57E-22  |
+| polyphagia         | 59.595254  | 1.17E-14  |
+| irritability       | 45.208348  | 1.77E-11  |
+| alopecia           | 36.064143  | 1.91E-09  |
+| visual_blurring    | 31.808456  | 1.70E-08  |
+| weakness           | 29.767918  | 4.87E-08  |
+| muscle_stiffness   | 7.288667   | 6.94E-03  |
+| genital_thrush     | 5.792149   | 1.61E-02  |
+| obesity            | 2.327474   | 1.27E-01  |
+| delayed_healing    | 0.962094   | 3.27E-01  |
+| itching            | 0.046235   | 8.30E-01  |
+
+The chi-square test shows that polyuria, polydipsia, sudden weight loss, and partial paresis have the strongest association with diabetes (individual correlation with diabetes).
+
+### Logistic Regression
+
+| Variable           | Odds Ratio | CI Lower   | CI Upper   | p-value   |
+|--------------------|------------|------------|------------|-----------|
+| gender             | 0.013528   | 0.004233   | 0.043235   | 3.91E-13  |
+| polyuria           | 79.887434  | 19.995261  | 319.175735 | 5.70E-10  |
+| polydipsia         | 143.29884  | 28.616981  | 717.565482 | 1.53E-09  |
+| itching            | 0.062627   | 0.017487   | 0.224291   | 2.08E-05  |
+| irritability       | 8.332763   | 2.694383   | 25.770252  | 2.33E-04  |
+| genital_thrush     | 6.228905   | 2.077599   | 18.675043  | 1.09E-03  |
+| partial_paresis    | 2.692106   | 1.030371   | 7.033815   | 4.33E-02  |
+| polyphagia         | 2.474431   | 0.953608   | 6.420674   | 6.26E-02  |
+| const              | 2.392603   | 0.942013   | 6.076930   | 6.66E-02  |
+| weakness           | 2.592047   | 0.923933   | 7.271851   | 7.04E-02  |
+| muscle_stiffness   | 0.392565   | 0.134560   | 1.145271   | 8.70E-02  |
+| visual_blurring    | 1.983300   | 0.599477   | 6.561516   | 2.62E-01  |
+| delayed_healing    | 0.593728   | 0.197424   | 1.785558   | 3.53E-01  |
+| alopecia           | 0.704838   | 0.238199   | 2.085635   | 5.27E-01  |
+| obesity            | 0.756497   | 0.259766   | 2.203092   | 6.09E-01  |
+| sudden_weight_loss | 1.151977   | 0.393849   | 3.369442   | 7.96E-01  |
+
+The logistic regression shows that polydipsia, polyuria, and irritability have strong positive associations with diabetes once other symptoms are accounted for.
+
+### Odds Ratios with 95% CI for Gender × Polyuria Interaction
+
+| Variable         | Odds Ratio     | CI Lower       | CI Upper       | p-value       |
+|------------------|----------------|----------------|----------------|---------------|
+| gender           | 0.08584337     | 0.04459025     | 0.1652622      | 2.03E-13      |
+| Intercept        | 2.31579        | 1.352169       | 3.966133       | 2.22E-03      |
+| polyuria         | 2.805841e+06   | 2.572650e-185  | 3.060170e+197  | 9.47E-01      |
+| gender:polyuria  | 1.362526e-05   | 1.248678e-196  | 1.486753e+186  | 9.60E-01      |
+
+The p-value for the gender x polyuria interaction term is not significant. The relationship between polyuria and diabetes doesn't differ by gender meaningfully. The odds ratio (1.363e-05) is very close to 1, indicating a small effect difference between genders.
+
+### Odds Ratios with 95% CI for Gender × Polydipsia Interaction
+
+| Variable           | Odds Ratio     | CI Lower   | CI Upper   | p-value       |
+|--------------------|----------------|------------|------------|---------------|
+| gender             | 0.1075385      | 0.057768   | 0.200188   | 2.02E-12      |
+| Intercept          | 2.526316       | 1.485164   | 4.297351   | 6.28E-04      |
+| polydipsia         | 4.287872e+09   | 0.000000   | ∞          | 9.98E-01      |
+| gender:polydipsia  | 1.073041e-08   | 0.000000   | ∞          | 9.98E-01      |
+
+The p-value for the gender x polydipsia interaction term is not significant. The relationship between polydipsia and diabetes doesn't differ by gender meaningfully. The odds ratio (1.073e-08) is very close to 1, indicating a small effect difference between genders.
+
+### Odds Ratios with 95% CI for Gender × Irritability Interaction
+
+| Variable           | Odds Ratio | CI Lower  | CI Upper   | p-value       |
+|--------------------|------------|-----------|------------|---------------|
+| gender             | 0.072289   | 0.041323  | 0.126461   | 3.36E-20      |
+| Intercept          | 7.000000   | 4.271844  | 11.470456  | 1.14E-14      |
+| irritability       | 6.714286   | 0.871875  | 51.706506  | 6.75E-02      |
+| gender:irritability| 1.236170   | 0.146348  | 10.441658  | 8.46E-01      |
+
+The p-value for the gender x irritability interaction term is not significant. The relationship between irritability and diabetes doesn't differ by gender meaningfully. The odds ratio (1.236) is very close to 1, indicating a small effect difference between genders.
+
 
 ### Visualizations
 
