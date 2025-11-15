@@ -284,7 +284,10 @@ This SHAP (beeswarm) summary plot illustrates how each feature influences the mo
 ---
 
 ## References & Acknowledgements
-
+- Holtz, Y. *The Python Graph Gallery*. https://python-graph-gallery.com/
+- Matplotlib. *Matplotlib 3.10.7 Documentation*. https://matplotlib.org/stable/api/matplotlib_configuration_api.html
+- Scikit-learn. *LogisticRegression*. https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+- University of Toronto Data Science Institute. https://github.com/UofT-DSI 
 
 ---
 
