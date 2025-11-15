@@ -264,7 +264,17 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 
 
 ### Visualizations
+To enhance interpretability of the model, SHAP (SHapley Additive exPlanations) was applied to our logistic regression model. SHAP values allowed us to identify which symptoms and demographic factors had the greatest overall impact on predictions, shown through a global feature-importance plot and a beeswarm plot as shown below:
 
+<p align="center">
+<img src="images/SHAP_feat_imp.png" style="width:50%;">
+
+This SHAP feature importance plot highlights which factors most strongly influence the model’s diabetes predictions. Polydipsia is the most impactful feature, followed by gender and polyuria, indicating that these variables consistently have the largest effect on the model’s output. Other symptoms such as itching, irritability, genital thrush, polyphagia, and partial paresis, also contribute meaningfully but to a lesser extent. Features like sudden weight loss, delayed healing, and muscle stiffness show moderate influence, while demographic factors such as age and obesity, along with symptoms like visual blurring and weakness, have minimal overall impact. Overall, the model relies primarily on a small set of key symptom indicators, with other features playing more modest roles.
+
+<p align="center">
+<img src="images/SHAP_sum_plot.png" style="width:50%;">
+
+This SHAP (beeswarm) summary plot illustrates how each feature influences the model’s diabetes predictions, showing both the direction and strength of impact. Red points indicate high feature values that push predictions toward diabetes, while blue points represent low values that reduce risk. Polydipsia, gender, and polyuria stand out as the strongest predictors, with clear color separation demonstrating that high values for these features markedly increase predicted risk. Other symptoms such as itching, irritability, genital thrush, polyphagia, and partial paresis, also increase risk but with more moderate influence. Sudden weight loss, delayed healing, and muscle stiffness show smaller effects, while features like alopecia, weakness, visual blurring, obesity, and even age contribute little, with points clustered near zero. Overall, the model relies most heavily on a few key symptoms and the gender variable, with other features playing a more limited role.
 
 ---
 
@@ -274,7 +284,10 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 ---
 
 ## References & Acknowledgements
-
+- Holtz, Y. *The Python Graph Gallery*. https://python-graph-gallery.com/
+- Matplotlib. *Matplotlib 3.10.7 Documentation*. https://matplotlib.org/stable/api/matplotlib_configuration_api.html
+- Scikit-learn. *LogisticRegression*. https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+- University of Toronto Data Science Institute. https://github.com/UofT-DSI 
 
 ---
 
