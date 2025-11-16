@@ -106,7 +106,129 @@ Publication date: within last 5 years
 Language: English
 Number of search results: 65
 
-Search #3 also did not yield sufficient relevant results so Search #4 will be developed and presented in the final submission. 
+Search #4 
+Database: PubMed
+Search terms: 
+("Diabetes Mellitus, Type 2"[Mesh]) 
+AND ("early-onset"[Title/Abstract] OR "premature"[Title/Abstract] OR "middle-aged"[Mesh] OR "adult"[Mesh]) 
+AND ("Risk Factors"[Mesh] OR predictor*[Title/Abstract] OR "clinical features"[Title/Abstract] OR determinants[Title/Abstract] OR "associated factors"[Title/Abstract]) 
+AND (Age[Mesh] OR "Sex Characteristics"[Mesh] OR "Obesity"[Mesh] OR "Body Mass Index"[Mesh] OR polyuria[Title/Abstract] OR polydipsia[Title/Abstract] OR "sudden weight loss"[Title/Abstract] OR weakness[Title/Abstract] OR polyphagia[Title/Abstract])
+AND ("cohort study"[Publication Type] OR "case-control study"[Publication Type] OR "observational study"[Publication Type])
+Publication date: within last 5 years
+Language: English
+Number of search results: 192 (2015-2025)
+
+Search #5
+Database: Google Scholar
+Search terms: diabetes, polyuria, predictor
+Publication date: since 2021
+Language: English
+Number of search results: 10,200
+
+Search #6
+Database: Google Scholar
+Search terms: diabetes, polyuria, predictor, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 6,320
+
+Search #7
+Database: Google Scholar
+Search terms: diabetes, sudden weight loss, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 16,300
+
+Search #8
+Database: Google Scholar
+Search terms: diabetes, weakness, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,400
+
+Search #9
+Database: Google Scholar
+Search terms: diabetes, polyphagia, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 2,600
+
+Search #10
+Database: Google Scholar
+Search terms: diabetes, genital thrush, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 16,300
+
+Search #11
+Database: Google Scholar
+Search terms: diabetes, visual blurring, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,700
+Search #12
+Database: Google Scholar
+Search terms: diabetes, itching, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,900
+
+Search #13
+Database: Google Scholar
+Search terms: diabetes, irritability, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 18,100
+
+Search #14
+Database: Google Scholar
+Search terms: diabetes, delayed healing, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,100
+
+Search #15
+Database: Google Scholar
+Search terms: diabetes, partial paresis, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,300
+
+Search #16
+Database: Google Scholar
+Search terms: diabetes, muscle stiffness, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 17,200
+
+Search #17
+Database: Google Scholar
+Search terms: diabetes, alopecia, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 13,400
+
+Search #18
+Database: Google Scholar
+Search terms: diabetes, obesity, association, correlation
+Publication date: since 2021
+Language: English
+Number of search results: 29,000
+
+The initial plan was to conduct a systematic literature search to identify all potential predictors of diabetes supported in prior research. However, even after refining the search strategy and applying publication date filters, the number of returned articles remained too high to be reviewed within the time frame of this project. As a result, we shifted our approach to search each predictor individually in combination with diabetes and gender. This provided us with targeted information on known associations and potential confounders for the variables in our analysis. Only the results of first 4 search strategies noted above were thoroughly reviewed. The remaining search strategies were performed solely to estimate the volume of literature and were not fully examined. To supplement this, we performed focused Google searches using each variable of interest paired with the terms "diabetes," "association," and "correlation," which allowed us to quickly identify relevant supporting information. These findings were synthesized and summarized in the table below.
+
+Table 1. Literature-Based Context and Theoretical Support for Early-Onset Variables
+
+| Variable           | Role               | Supporting Literature |
+|--------------------|--------------------|-----------------------|
+| Age                | Confounder         |Zhang et al., 2019(https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2019.00658/full?utm_source=chatgpt.com)|
+| Obesity            | Strong Association|Berumen et al., 2023(https://pubmed.ncbi.nlm.nih.gov/37291636/); Bener et al., 2016(https://pubmed.ncbi.nlm.nih.gov/27381964/); Wohl et al., 2025(https://www.mdpi.com/2075-4426/15/1/16)|
+| Obesity            | Confounder         |Canter and Calabellero, 2012(https://www.sciencedirect.com/science/article/pii/S2161831322010249)|
+| Polyuria           | Strong Association |Kaliappan et al., 2024(https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2024.1421751/full)|
+| Polydipsia         | Strong Association |Kaliappan et al., 2024(https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2024.1421751/full) |
+| Sudden weight loss | Strong Association | Anggraini et al., 2024(https://hal.science/hal-05121048/)
+
+Confounders are included as required control in adjusted models and excluded in unadjusted models. Variables with strong associations are included in all models.
 
 ### Descriptive and Exploratory Data Analysis
 Exploratory data analysis will be conducted to understand the demographic and clinical characteristics of the population.
@@ -387,7 +509,7 @@ The project successfully used the Early Stage Diabetes Risk Prediction dataset t
 
 Our initial plan was to compare symptom presentation across genders by fitting separate logistic regression models for male and female participants, and examining differences in coefficient magnitudes, odds ratios and statistical significance. We also aimed to formally test gender moderation by including interaction terms in a combined model. This approach would have allowed us to evaluate whether symptom patterns carry different predictive weight across genders. 
 
-However, we decided to revise our Business Problem by removing the focus on gender-based differences in early-onset diabetes symptom presentation. Given the time and data constraints, we determined that a stratified gender analysis would not be feasible. The gender imbalance in the dataset introduced complications during the female-only logistic regression, particularly when age was treated as a continuous predictor - several age values were absent within the female subgroup. This can lead to issues such as quasi-complete separation, unstable coefficient estimates and convergence failures in logistic models. Without sufficient cell counts (sparse data), the model cannot reliably estimate odds ratios, making any subgroup-specific interpretations statistically invalid. 
+However, we were unable to fully support the recommendations for our Business Problem as we were unable to verify our findings of gender-based differences in early-onset diabetes symptom presentation from our interaction model with a stratified model. Given the time and data constraints, we determined that a stratified gender analysis would not be feasible. The gender imbalance in the dataset introduced complications during the female-only logistic regression, particularly when age was treated as a continuous predictor - several age values were absent within the female subgroup and some age values were only associated with one outcome. This can lead to issues such as perfect and quasi-complete separation. Without sufficient cell counts (sparse data), the model cannot reliably estimate odds ratios, making any subgroup-specific interpretations statistically unreliable. 
 
 The next step for this analysis is to restructure the data before conducting the stratified logistic regression. Specifically, age would need to be converted from a continuous measure into categorical “bins” to ensure sufficient representation across age categories within each gender group. This step would help mitigate empty-cell issues.
 
@@ -412,7 +534,7 @@ Overall our analysis holds meaningful implications across the healthcare ecosyst
 
 | Name                 | GitHub Accounts                                  | Reflection Videos |
 |----------------------|--------------------------------------------------|-------------------|
-| Kristy Yiu           | [@kristycy-yiu](https://github.com/kristycy-yiu) |                   |
+| Kristy Yiu           | [@kristycy-yiu](https://github.com/kristycy-yiu) |[Video](https://youtu.be/LIjicGQ38vw)                   |
 | Rebecca Laundos      | [@relaundos7](https://github.com/relaundos7)     |[Video](https://drive.google.com/file/d/1l7qt5KkO6h1vQ5czVVDL4gRDElDCn0HA/view?usp=sharing) |
 | Lamoya Waldman       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
 | Samantha Sathaseevan | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
