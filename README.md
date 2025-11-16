@@ -166,6 +166,7 @@ Search terms: diabetes, visual blurring, association, correlation
 Publication date: since 2021
 Language: English
 Number of search results: 17,700
+
 Search #12
 Database: Google Scholar
 Search terms: diabetes, itching, association, correlation
@@ -354,7 +355,7 @@ This heatmap compares symptom frequencies between male and female participants w
 
 
 <p align="center">
-<img src="images/correlation_matrix.png" style="width:60%;">
+<img src="images/correlation_matrix.png" style="width:70%;">
 
 #### Figure 9: Correlation Matrix of Predictor Variables
 The binary variables were numerically encoded to examine their interrelationships through a correlation matrix. The analysis suggested notable positive associations (e.g. Polyuria, Polydipsia, and sudden weight loss) between several symptoms and the diabetes outcome variable. While correlation does not imply causation, these relationships support the hypothesis that symptom presentation is a meaningful basis for prediction.
@@ -385,13 +386,13 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 ## Regression Analysis & Validation
 
 The logistic regression model achieved strong predictive performance:
-Accuracy: 94% 
-AUC (Area Under Curve): 0.99 
-Sensitivity (Recall for diabetic class): 92% 
-Specificity (Recall for non-diabetic class): 97% 
+- Accuracy: 94% 
+- AUC (Area Under Curve): 0.99 
+- Sensitivity (Recall for diabetic class): 92% 
+- Specificity (Recall for non-diabetic class): 97% 
+
 <p align="center">
 <img src="images/ROC_curve.PNG" style="width:70%;">
-
 
 The model demonstrates exceptional discriminative ability, with an Area Under the Curve (AUC) of 0.99. This indicates near-perfect classification performance, meaning the model can accurately distinguish between the positive and negative classes with minimal error
 
@@ -474,10 +475,7 @@ The p-value for the gender x polydipsia interaction term is not significant. The
 
 The p-value for the gender x irritability interaction term is not significant. The relationship between irritability and diabetes doesn't differ by gender meaningfully. The odds ratio (1.236) is very close to 1, indicating a small effect difference between genders.
 
-
-### Visualizations
-
-#### SHAP Analysis
+### SHAP Analysis
 To enhance interpretability of the model, SHAP (SHapley Additive exPlanations) was applied to our logistic regression model. SHAP values allowed us to identify which symptoms and demographic factors had the greatest overall impact on predictions, shown through a global feature-importance plot and a beeswarm plot as shown below:
 
 <p align="center">
@@ -490,7 +488,7 @@ This SHAP feature importance plot highlights which factors most strongly influen
 
 This SHAP (beeswarm) summary plot illustrates how each feature influences the model’s diabetes predictions, showing both the direction and strength of impact. Red points indicate high feature values that push predictions toward diabetes, while blue points represent low values that reduce risk. Polydipsia, gender, and polyuria stand out as the strongest predictors, with clear color separation demonstrating that high values for these features markedly increase predicted risk. Other symptoms such as itching, irritability, genital thrush, polyphagia, and partial paresis, also increase risk but with more moderate influence. Sudden weight loss, delayed healing, and muscle stiffness show smaller effects, while features like alopecia, weakness, visual blurring, obesity, and even age contribute little, with points clustered near zero. Overall, the model relies most heavily on a few key symptoms and the gender variable, with other features playing a more limited role.
 
-#### Odds Ratio Forest Plot
+### Odds Ratio Forest Plot
 The odds ratio forest plot summarizes how each predictor is statistically associated with early-stage diabetes after adjusting for all other symptoms. Predictors with odds ratios above 1 increase the likelihood of diabetes, and those with confidence intervals fully above 1 are the most reliable indicators.
 
 <p align = "center">
@@ -534,10 +532,10 @@ Overall our analysis holds meaningful implications across the healthcare ecosyst
 
 | Name                 | GitHub Accounts                                  | Reflection Videos |
 |----------------------|--------------------------------------------------|-------------------|
-| Kristy Yiu           | [@kristycy-yiu](https://github.com/kristycy-yiu) |[Video](https://youtu.be/LIjicGQ38vw)                   |
-| Rebecca Laundos      | [@relaundos7](https://github.com/relaundos7)     |[Video](https://drive.google.com/file/d/1l7qt5KkO6h1vQ5czVVDL4gRDElDCn0HA/view?usp=sharing) |
+| Kristy Yiu           | [@kristycy-yiu](https://github.com/kristycy-yiu) |[Video](https://youtu.be/LIjicGQ38vw)|
+| Rebecca Laundos      | [@relaundos7](https://github.com/relaundos7)     |[Video](https://drive.google.com/file/d/1l7qt5KkO6h1vQ5czVVDL4gRDElDCn0HA/view?usp=sharing)|
 | Lamoya Waldman       | [@LamoyaW](https://github.com/LamoyaW)           |                   |
-| Samantha Sathaseevan | [@5amantha-GH](https://github.com/5amantha-GH)   |                   |
+| Samantha Sathaseevan | [@5amantha-GH](https://github.com/5amantha-GH)   |[Video](https://drive.google.com/file/d/1-H1rpG-8DhRHF1Tb0nOmCP5qQ8qt-Py-/view?usp=drive_link)|
 
 ---
 ## Installation & Environment Setup
