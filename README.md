@@ -384,7 +384,7 @@ Other possible predictors of diabetes: Literature has shown that race/ethnicity,
 ---
 
 ## Regression Analysis & Validation
-
+### Predictive Performance
 The logistic regression model achieved strong predictive performance:
 - Accuracy: 94% 
 - AUC (Area Under Curve): 0.99 
@@ -398,7 +398,6 @@ The model demonstrates exceptional discriminative ability, with an Area Under th
 
 Feature importance analysis revealed that: polydipsia, polyuria, and irritability were the most influential predictors. The model demonstrated high interpretability, with clear directional effects for each feature. 
 
-## Regression Analysis & Validation
 ### Chi-Square Test
 | Variable           | Chi²       | p-value   |
 |--------------------|------------|-----------|
